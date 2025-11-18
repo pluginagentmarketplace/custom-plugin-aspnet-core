@@ -1,94 +1,53 @@
 {
   "hooks": [
     {
-      "name": "learning-progress-tracker",
-      "description": "Track and record learning progress automatically",
-      "events": ["after-learn-command", "milestone-completion"],
+      "name": "project-initialization",
+      "description": "Initialize new ASP.NET Core project with best practices",
+      "events": ["on-project-create"],
       "actions": [
-        "log_progress",
-        "update_stats",
-        "notify_milestone"
+        "create-gitignore",
+        "setup-git",
+        "initialize-dependencies"
       ]
     },
     {
-      "name": "skill-validation",
-      "description": "Validate claimed skills through assessments",
-      "events": ["after-assess-command"],
+      "name": "code-quality-check",
+      "description": "Run code quality checks on commits",
+      "events": ["pre-commit"],
       "actions": [
-        "validate_scores",
-        "update_profile",
-        "suggest_improvements"
+        "run-linter",
+        "format-code",
+        "run-tests"
       ]
     },
     {
-      "name": "learning-reminder",
-      "description": "Send periodic learning reminders and suggestions",
-      "events": ["daily", "weekly"],
+      "name": "deployment-validation",
+      "description": "Validate application before deployment",
+      "events": ["pre-deploy"],
       "actions": [
-        "check_engagement",
-        "send_reminder",
-        "suggest_next_project"
-      ]
-    },
-    {
-      "name": "project-completion",
-      "description": "Celebrate and validate completed projects",
-      "events": ["project-submitted"],
-      "actions": [
-        "validate_project",
-        "award_badge",
-        "suggest_next_level"
-      ]
-    },
-    {
-      "name": "community-contribution",
-      "description": "Track open source contributions",
-      "events": ["github-pr-merged", "project-github-link"],
-      "actions": [
-        "count_contributions",
-        "award_points",
-        "update_portfolio_score"
-      ]
-    },
-    {
-      "name": "role-readiness",
-      "description": "Check if user is job-ready for target role",
-      "events": ["after-milestone-4"],
-      "actions": [
-        "evaluate_readiness",
-        "provide_feedback",
-        "suggest_next_steps"
+        "build-check",
+        "test-execution",
+        "security-scan",
+        "docker-build"
       ]
     }
   ],
   "notifications": {
     "enabled": true,
-    "frequency": "daily",
     "types": [
-      "milestone-achievement",
-      "skill-mastery",
-      "project-suggestion",
-      "peer-learning-opportunity"
+      "deployment-complete",
+      "build-failed",
+      "tests-failed",
+      "security-warning"
     ]
   },
-  "gamification": {
+  "automation": {
     "enabled": true,
     "features": [
-      "points-system",
-      "badges",
-      "leaderboards",
-      "streaks",
-      "achievements"
+      "auto-format",
+      "auto-test",
+      "auto-build",
+      "auto-deploy"
     ]
-  },
-  "analytics": {
-    "track": [
-      "learning-time",
-      "projects-completed",
-      "assessment-scores",
-      "skill-growth",
-      "community-engagement"
-    ],
-    "reporting": "weekly"
   }
 }

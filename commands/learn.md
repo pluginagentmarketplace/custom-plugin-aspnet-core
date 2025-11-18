@@ -1,126 +1,150 @@
-# /learn - Start Your Learning Journey
+# /learn - ASP.NET Core Learning Path
 
-**Description:** Choose a personalized learning path based on your interests and goals.
+**Start your ASP.NET Core learning journey with a personalized path.**
 
-## Interactive Learning Selection
+## Learning Tracks
 
-When you run this command, I'll help you:
-1. **Assess Your Current Level** - Where are you now?
-2. **Define Your Goal** - What do you want to become?
-3. **Select Your Specialization** - Which domain interests you?
-4. **Create Your Roadmap** - Step-by-step learning plan
-
-## Available Learning Paths
-
-### 🎨 Frontend & UI Development
-Specialize in modern web interfaces using React, Vue, Angular, Next.js, Flutter, or Svelte.
-- **Duration:** 4-6 months
-- **Projects:** 10+ hands-on projects
-- **Focus:** Component-based architecture, responsive design
-
-### 🔧 Backend & Server-Side
-Master server development using Node.js, Python, Java, ASP.NET Core, PHP, or Laravel.
-- **Duration:** 4-6 months
-- **Projects:** 8+ real-world APIs
-- **Focus:** Database design, API development, microservices
-
-### 🏗️ Full Stack & Architecture
-Become a complete developer who understands system design and scalability.
-- **Duration:** 6-8 months
-- **Projects:** Complex full-stack applications
-- **Focus:** Architecture patterns, scalability, performance
-
-### ☁️ DevOps & Cloud Engineer
-Master infrastructure, containerization, and cloud platforms.
-- **Duration:** 5-7 months
-- **Projects:** 15+ hands-on infrastructure projects
-- **Focus:** Docker, Kubernetes, AWS, Terraform, CI/CD
-
-### 🤖 Data & AI/ML Engineer
-Build machine learning models and data pipelines.
-- **Duration:** 6-8 months
-- **Projects:** Complete ML systems
-- **Focus:** ML algorithms, deep learning, MLOps
-
-### 🎮 Emerging & Specialized Domains
-Explore blockchain, cybersecurity, game development, mobile, or specialized languages.
-- **Duration:** Variable (4-6 months each)
-- **Projects:** Domain-specific applications
-- **Focus:** Cutting-edge technologies
-
-### 👨‍💼 Code Quality & Leadership
-Develop leadership skills and master QA, code review, and technical management.
-- **Duration:** 3-6 months
-- **Projects:** Leadership and quality initiatives
-- **Focus:** Team management, code quality
-
-## How to Use This Command
-
-Simply run:
-```
-/learn
-```
-
-Then I'll guide you through:
-1. **Quick Assessment** (2-3 minutes)
-   - Your current programming level
-   - Programming languages you know
-   - Your career goals
-
-2. **Path Selection** (1 minute)
-   - Choose from 7 specializations
-   - Get 2-3 alternative paths
-
-3. **Detailed Roadmap** (Personalized)
-   - Week-by-week learning plan
-   - Recommended resources
-   - Projects to build
-   - Milestones and checkpoints
-
-## Learning Recommendations
-
-### For Complete Beginners
-Start with: **Frontend Fundamentals** or **Backend Basics**
-- Build a strong foundation
-- Don't skip fundamentals
-- Practice coding daily
-
-### For Intermediate Developers
-- **Option 1:** Go full-stack (combine frontend + backend)
-- **Option 2:** Specialize deeper (master one area)
-- **Option 3:** Explore adjacent fields (DevOps, ML)
-
-### For Advanced Developers
-- **Option 1:** Move into architecture and leadership
-- **Option 2:** Explore emerging technologies
-- **Option 3:** Contribute to open source, mentor others
-
-## Learning Resources Included
-
-For each path, you'll get:
-- 📚 **Curated tutorials** from top platforms
-- 🎥 **Video courses** with timestamps
-- 📖 **Written guides** and documentation
-- 💻 **Code examples** for every concept
-- 🎯 **Projects** with requirements and solutions
-- ✅ **Assessment tests** to track progress
-- 🏆 **Milestones** to celebrate achievements
-
-## Sample Weekly Schedule
+### Track 1: Backend Developer (12-14 weeks)
+**Goal:** Build production-ready REST APIs
 
 ```
-Monday-Wednesday: Learn concepts (2 hours)
-Thursday: Build mini-project (2 hours)
-Friday-Sunday: Full project work (6-8 hours)
-Total: 10-12 hours/week
+Weeks 1-2: C# Fundamentals
+  ├─ Variables, types, operators
+  ├─ Control flow
+  ├─ Functions and methods
+  └─ Classes and OOP
+
+Weeks 3-4: ASP.NET Core Basics
+  ├─ Project structure
+  ├─ Dependency Injection
+  ├─ Middleware pipeline
+  └─ Routing
+
+Weeks 5-6: API Development
+  ├─ Controllers and actions
+  ├─ Model binding
+  ├─ Validation
+  └─ Error handling
+
+Weeks 7-8: Database (Entity Framework Core)
+  ├─ DbContext setup
+  ├─ Relationships
+  ├─ Migrations
+  └─ Query optimization
+
+Weeks 9-10: Authentication & Security
+  ├─ Identity framework
+  ├─ JWT tokens
+  ├─ Authorization policies
+  └─ Secure password handling
+
+Weeks 11-12: Testing & Best Practices
+  ├─ Unit testing
+  ├─ Integration testing
+  ├─ Logging
+  └─ Performance optimization
+
+Weeks 13-14: Projects & Portfolio
+  ├─ Simple CRUD API
+  ├─ Complex API with relationships
+  ├─ Real-world application
+  └─ GitHub portfolio
 ```
+
+### Track 2: DevOps Engineer (10-12 weeks)
+**Goal:** Deploy ASP.NET Core to production
+
+```
+Weeks 1-2: Docker Basics
+  ├─ Dockerfile creation
+  ├─ Image building
+  ├─ Container running
+  └─ Docker Compose
+
+Weeks 3-4: Azure Cloud
+  ├─ App Service
+  ├─ Azure SQL Database
+  ├─ Azure Container Registry
+  └─ Application Insights
+
+Weeks 5-6: CI/CD Pipelines
+  ├─ GitHub Actions
+  ├─ Build automation
+  ├─ Test automation
+  └─ Release pipelines
+
+Weeks 7-8: Kubernetes & Orchestration
+  ├─ Pod deployment
+  ├─ Services
+  ├─ ConfigMaps & Secrets
+  └─ Helm charts
+
+Weeks 9-10: Monitoring & Security
+  ├─ Application Insights
+  ├─ Alerts and notifications
+  ├─ Log aggregation
+  └─ Security best practices
+
+Weeks 11-12: Projects & Real-world
+  ├─ Containerize application
+  ├─ Deploy to Azure
+  ├─ Setup CI/CD
+  └─ Full production setup
+```
+
+### Track 3: Architect (16-18 weeks)
+**Goal:** Design scalable enterprise applications
+
+```
+Weeks 1-4: SOLID & Design Patterns
+  ├─ Single Responsibility
+  ├─ Repository pattern
+  ├─ Dependency Inversion
+  └─ Factory patterns
+
+Weeks 5-8: Domain-Driven Design
+  ├─ Bounded contexts
+  ├─ Aggregates
+  ├─ Value objects
+  └─ Domain events
+
+Weeks 9-12: Microservices Architecture
+  ├─ Service boundaries
+  ├─ Communication patterns
+  ├─ Data management
+  └─ Resilience patterns
+
+Weeks 13-16: Advanced Patterns
+  ├─ CQRS pattern
+  ├─ Event sourcing
+  ├─ API Gateway
+  └─ Service mesh
+
+Weeks 17-18: Real-world Design
+  ├─ Architecture documentation
+  ├─ Trade-off analysis
+  ├─ Performance optimization
+  └─ Scalability design
+```
+
+## Resources
+
+### Official Documentation
+- [ASP.NET Core Docs](https://docs.microsoft.com/aspnet/core)
+- [C# Language Reference](https://docs.microsoft.com/dotnet/csharp)
+- [Entity Framework Core](https://docs.microsoft.com/ef/core)
+
+### Video Courses
+- Microsoft Learn paths
+- Udemy ASP.NET Core courses
+- Pluralsight tracks
+
+### Books
+- "C# Player's Guide"
+- "ASP.NET Core in Action"
+- "Microservices Architecture" by Sam Newman
 
 ## Next Steps
 
-Run `/learn` to get started with your personalized learning plan!
-
-Or explore other commands:
-- `/explore-roles` - See all 72 available roles
-- `/assess` - Take knowledge assessment
-- `/roadmap` - Get detailed roadmap for specific role
+Run `/project` to get hands-on project templates.
 

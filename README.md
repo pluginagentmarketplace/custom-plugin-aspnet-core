@@ -1,305 +1,270 @@
-# 🚀 Developer Roadmap Plugin for Claude Code
+# Custom Plugin ASP.NET Core
 
-**The most comprehensive learning companion for all 72 developer career paths from roadmap.sh**
-
-> Ultra-modern, robust, production-ready Claude Code plugin with 7 specialized agents, 7 invokable skills, and 4 slash commands. Covers 72 roadmaps, 500+ projects, and 2000+ hours of learning content.
-
-[![GitHub Stars](https://img.shields.io/github/stars/pluginagentmarketplace/developer-roadmap-plugin?style=flat-square)](https://github.com/pluginagentmarketplace/developer-roadmap-plugin)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-green.svg?style=flat-square)](CHANGELOG.md)
+Professional ASP.NET Core development plugin for Claude Code with 3 agents, 3 skills, and complete development infrastructure.
 
 ## 📦 Features
 
-### ✨ 7 Specialized Agents
+### 3 Specialized Agents
 
-1. **🎨 Frontend & UI Specialist** - React, Vue, Angular, Next.js, Flutter, UX Design (14 roadmaps)
-2. **🔧 Backend & Server-Side Specialist** - Node.js, Python, Java, ASP.NET Core, APIs (10 roadmaps)
-3. **🏗️ Full Stack & Architect** - System design, scalability, architecture patterns (4 roadmaps)
-4. **☁️ DevOps & Cloud Engineer** - Docker, Kubernetes, Terraform, AWS, CI/CD (9 roadmaps)
-5. **🤖 Data & AI/ML Engineer** - ML algorithms, deep learning, LLMs, data pipelines (13 roadmaps)
-6. **🎮 Emerging & Specialized Domains** - Blockchain, Cybersecurity, Game Dev, Mobile (14 roadmaps)
-7. **👨‍💼 Code Quality & Leadership** - QA, leadership, algorithms, management (6 roadmaps)
+1. **ASP.NET Core Backend Specialist** - REST APIs, Entity Framework, enterprise applications
+2. **ASP.NET Core DevOps & Infrastructure** - Docker, Azure, CI/CD, Kubernetes
+3. **ASP.NET Core Architecture & Design** - SOLID, design patterns, microservices
 
-### 🎯 4 Powerful Slash Commands
+### 3 Invokable Skills
 
-- `/learn` - Start personalized learning journey
-- `/explore-roles` - Discover all 72 roles and career paths
-- `/assess` - Knowledge assessment and skill evaluation
-- `/roadmap` - Detailed step-by-step roadmaps for any role
+1. **ASP.NET Core Fundamentals** - C#, project setup, routing, middleware
+2. **ASP.NET Core Advanced Development** - EF Core, authentication, testing, patterns
+3. **ASP.NET Core DevOps & Production** - Docker, Azure, CI/CD, monitoring
 
-### 🛠️ 7 Invokable Skills
+### 3 Slash Commands
 
-Each agent has specialized skills covering:
-- Frontend & UI Development Skills
-- Backend & API Development Skills
-- Full Stack & Architecture Skills
-- DevOps & Cloud Infrastructure Skills
-- Data & AI/ML Engineering Skills
-- Emerging & Specialized Domain Skills
-- Code Quality & Leadership Skills
+- `/learn` - Personalized learning path (Backend, DevOps, or Architect)
+- `/project` - Hands-on project templates (12+ projects)
+- `/deploy` - Deployment guidance (Azure App Service, Docker, Kubernetes)
 
-### 📚 Comprehensive Content
+## 🚀 Installation
 
-- **72 Roadmaps** - All roles from roadmap.sh
-- **500+ Projects** - Hands-on learning projects
-- **2000+ Learning Hours** - Structured content
-- **1000+ Code Examples** - Real-world implementations
-- **Real-world Applications** - Industry case studies
-
-## 🚀 Quick Start
-
-### Installation
-
-#### Option 1: Local Directory
+### Single Line
 ```bash
-# Clone the repository
-git clone https://github.com/pluginagentmarketplace/developer-roadmap-plugin.git
-cd developer-roadmap-plugin
-
-# Load in Claude Code
-# Point to: ./developer-roadmap-plugin
+plugin add custom-plugin-aspnet-core
 ```
 
-#### Option 2: From Marketplace
+### From Local Directory
 ```bash
-# In Claude Code
-plugin add "developer-roadmap-plugin"
+# Clone and navigate
+git clone https://github.com/pluginagentmarketplace/custom-plugin-aspnet-core.git
+cd custom-plugin-aspnet-core
+
+# In Claude Code:
+# Add from ./custom-plugin-aspnet-core
 ```
 
-### Usage
+## 📚 Usage
 
+### Start Learning
 ```bash
-# Start learning with personalized path
 /learn
-
-# Explore all available roles
-/explore-roles
-
-# Assess your current skills
-/assess
-
-# Get detailed roadmap for specific role
-/roadmap React Developer
 ```
+Choose from 3 tracks:
+- **Backend Developer** (12-14 weeks) - Build REST APIs
+- **DevOps Engineer** (10-12 weeks) - Deploy to production
+- **Architect** (16-18 weeks) - Design enterprise systems
 
-## 📋 Plugin Structure
+### Get Project Templates
+```bash
+/project
+```
+Access 12+ projects:
+- Beginner: Todo API, Product Catalog, Authentication
+- Intermediate: E-Commerce, Real-time Chat, Blog Platform
+- Advanced: Microservices, Multi-tenant SaaS, Analytics
+- DevOps: Containerization, Azure Deployment, Kubernetes
+
+### Deploy Application
+```bash
+/deploy
+```
+Deployment options:
+- Azure App Service
+- Docker + Container Registry
+- Kubernetes (AKS)
+- GitHub Actions CI/CD
+
+## 🏗️ Plugin Structure
 
 ```
-developer-roadmap-plugin/
+custom-plugin-aspnet-core/
 ├── .claude-plugin/
 │   └── plugin.json                    # Plugin manifest
-├── agents/                            # 7 Specialized agents
-│   ├── 01-frontend-ui-developer.md
-│   ├── 02-backend-developer.md
-│   ├── 03-full-stack-architect.md
-│   ├── 04-devops-cloud-engineer.md
-│   ├── 05-data-ai-ml-engineer.md
-│   ├── 06-emerging-specialist.md
-│   └── 07-code-quality-leader.md
-├── commands/                          # 4 Slash commands
+├── agents/                            # 3 agents
+│   ├── aspnet-core-backend.md
+│   ├── aspnet-core-devops.md
+│   └── aspnet-core-architecture.md
+├── commands/                          # 3 slash commands
 │   ├── learn.md
-│   ├── explore-roles.md
-│   ├── assess.md
-│   └── roadmap.md
-├── skills/                            # 7 Invokable skills
-│   ├── frontend/SKILL.md
-│   ├── backend/SKILL.md
-│   ├── fullstack/SKILL.md
-│   ├── devops/SKILL.md
-│   ├── data-ai/SKILL.md
-│   ├── emerging/SKILL.md
-│   └── leadership/SKILL.md
+│   ├── project.md
+│   └── deploy.md
+├── skills/                            # 3 SKILL.md files
+│   ├── aspnet-core-fundamentals/SKILL.md
+│   ├── aspnet-core-advanced/SKILL.md
+│   └── aspnet-core-devops/SKILL.md
 ├── hooks/
-│   └── hooks.json                     # Automation hooks
-├── README.md
-├── CHANGELOG.md
-└── LICENSE
+│   └── hooks.json
+└── README.md
 ```
 
-## 🎓 Learning Paths Covered
+## 📖 Content Overview
 
-### Career Specializations (7 Main Paths)
+### Backend Agent
+- ASP.NET Core framework fundamentals
+- C# programming essentials
+- RESTful API design
+- Entity Framework Core
+- Database design
+- Authentication & Authorization
+- Dependency Injection
+- Testing and debugging
 
-| Path | Duration | Roadmaps | Projects |
-|------|----------|----------|----------|
-| Frontend & UI | 4-6 months | 14 | 100+ |
-| Backend & APIs | 4-6 months | 10 | 80+ |
-| Full Stack & Architecture | 6-8 months | 4 | 50+ |
-| DevOps & Cloud | 5-7 months | 9 | 100+ |
-| Data & AI/ML | 6-8 months | 13 | 80+ |
-| Emerging & Specialized | 4-6 months each | 14 | 100+ |
-| Code Quality & Leadership | 3-6 months | 6 | 50+ |
+### DevOps Agent
+- Docker containerization
+- Azure cloud services
+- CI/CD pipelines (GitHub Actions, Azure Pipelines)
+- Kubernetes orchestration
+- Infrastructure as Code (Terraform)
+- Monitoring & logging
+- Security and compliance
 
-### Complete Role Coverage
+### Architecture Agent
+- SOLID principles
+- Design patterns (Repository, Unit of Work, CQRS, etc.)
+- Domain-Driven Design
+- Microservices architecture
+- Event-driven systems
+- Performance optimization
+- Scalability patterns
 
-**72 Available Roles:**
-- 25 Role-based paths (Frontend Developer, Backend Developer, etc.)
-- 47 Skill-based paths (React, Python, Docker, AWS, etc.)
+## 💡 Learning Paths
+
+### Path 1: Backend Developer (12-14 weeks)
+```
+C# Fundamentals → ASP.NET Core Basics → API Development → Database
+→ Authentication → Testing → Portfolio Projects
+```
+
+### Path 2: DevOps Engineer (10-12 weeks)
+```
+Docker → Azure Cloud → CI/CD Pipelines → Kubernetes
+→ Monitoring → Security → Production Setup
+```
+
+### Path 3: Architect (16-18 weeks)
+```
+SOLID & Patterns → Domain-Driven Design → Microservices
+→ Advanced Patterns → Real-world Design
+```
+
+## 🎯 Quick Start
+
+1. **Install Plugin**
+   ```bash
+   plugin add custom-plugin-aspnet-core
+   ```
+
+2. **Choose Your Path**
+   ```bash
+   /learn
+   ```
+
+3. **Get Project Template**
+   ```bash
+   /project
+   ```
+
+4. **Build & Deploy**
+   ```bash
+   /deploy
+   ```
 
 ## 📊 Statistics
 
-| Metric | Value |
-|--------|-------|
-| Total Roadmaps | 72 |
-| Specialized Agents | 7 |
-| Invokable Skills | 7 |
-| Slash Commands | 4 |
-| Total Projects | 500+ |
-| Code Examples | 1000+ |
-| Learning Hours | 2000+ |
-| Estimated Job Readiness | 6-12 months |
+| Component | Count | Details |
+|-----------|-------|---------|
+| Agents | 3 | Backend, DevOps, Architecture |
+| Skills | 3 | Fundamentals, Advanced, DevOps |
+| Commands | 3 | Learn, Project, Deploy |
+| Projects | 12+ | Beginner to Advanced |
+| Learning Weeks | 14-18 | Per complete track |
+| Code Examples | 50+ | Real-world implementations |
 
-## 💡 Key Highlights
+## 🔑 Key Technologies
 
-### 🎯 Personalized Learning
-- Adaptive learning paths based on your level
-- Custom roadmaps based on your goals
-- Skill assessments to track progress
+- **Language:** C#, .NET 8
+- **Framework:** ASP.NET Core
+- **Database:** Entity Framework Core, SQL Server
+- **Cloud:** Azure (App Service, SQL, Container Registry, AKS)
+- **Containers:** Docker, Kubernetes
+- **CI/CD:** GitHub Actions, Azure Pipelines
+- **Monitoring:** Application Insights, Log Analytics
+- **Architecture:** SOLID, Design Patterns, Microservices
 
-### 📚 Comprehensive Content
-- From absolute beginner to expert
-- Real-world projects and case studies
-- Industry best practices
+## 📝 Project Examples
 
-### 🤝 Multiple Learning Styles
-- Visual learners: Roadmap diagrams
-- Theory learners: Detailed explanations
-- Hands-on learners: Projects and code
-- Practice learners: Assessments and challenges
+### Beginner
+- Todo API with CRUD operations
+- Product catalog with categories
+- User authentication with JWT
 
-### 🚀 Career Support
-- Salary information
-- Market demand analysis
-- Job readiness checklist
-- Interview preparation
+### Intermediate
+- E-commerce API (products, orders, payment)
+- Real-time chat with SignalR
+- Blog platform with comments
 
-## 🎯 Use Cases
+### Advanced
+- Microservices system (multiple services, messaging)
+- Multi-tenant SaaS application
+- Real-time analytics platform
 
-### For Beginners
-```
-/learn → Choose path → Build projects → /assess → Job ready
-```
+### DevOps
+- Containerize ASP.NET Core app (Docker)
+- Deploy to Azure App Service
+- Kubernetes deployment with health checks
 
-### For Career Changers
-```
-/explore-roles → /roadmap [target] → /learn → Transition ready
-```
+## 🚀 Deployment Support
 
-### For Experienced Developers
-```
-/assess → Identify gaps → /learn → Specialization achieved
+**Azure App Service**
+```bash
+dotnet publish -c Release
+az webapp deployment source config-zip --src app.zip
 ```
 
-### For Managers/Hiring
+**Docker**
+```dockerfile
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+COPY ./publish /app
+ENTRYPOINT ["dotnet", "MyApp.dll"]
 ```
-/explore-roles → /roadmap → /assess → Build teams with skills
+
+**Kubernetes**
+```yaml
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
 ```
 
-## 🔗 Integration
+## 📚 Resources
 
-Works seamlessly with:
-- Claude Code
-- GitHub
-- Learning platforms (Coursera, Udemy, Frontend Masters)
-- Job boards (LinkedIn, Indeed, Stack Overflow)
-- Portfolio platforms (GitHub, Dribbble)
+- [ASP.NET Core Documentation](https://docs.microsoft.com/aspnet/core)
+- [C# Language Reference](https://docs.microsoft.com/dotnet/csharp)
+- [Entity Framework Core](https://docs.microsoft.com/ef/core)
+- [Azure Documentation](https://docs.microsoft.com/azure)
+- [Kubernetes Documentation](https://kubernetes.io/docs)
 
-## 📖 Documentation
+## 🤝 Support
 
-- **[ARCHITECTURE.md](ARCHITECTURE.md)** - Plugin architecture and design
-- **[LEARNING-PATH.md](LEARNING-PATH.md)** - Detailed learning recommendations
-- **[CHANGELOG.md](CHANGELOG.md)** - Version history and updates
-
-## 🤝 Contributing
-
-Contributions welcome! Please:
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
-
-## 📞 Support
-
-For questions or issues:
-- Check existing [GitHub Issues](https://github.com/pluginagentmarketplace/developer-roadmap-plugin/issues)
-- Start a [Discussion](https://github.com/pluginagentmarketplace/developer-roadmap-plugin/discussions)
-- Join our community
+For issues or questions:
+- Check [GitHub Issues](https://github.com/pluginagentmarketplace/custom-plugin-aspnet-core/issues)
+- Review command documentation (`/learn`, `/project`, `/deploy`)
+- Consult agent expertise for specific domains
 
 ## 📄 License
 
-MIT License - see [LICENSE](LICENSE) file for details
+MIT License - See LICENSE file for details
 
-## 🌟 Credits
+## ✨ Features Highlights
 
-- **Content Source:** [roadmap.sh](https://roadmap.sh) - Open-source learning roadmaps
-- **Built For:** Claude Code by Anthropic
-- **Community:** Developers worldwide
-
-## 🚀 Roadmap
-
-### v1.0.0 (Current)
-- ✅ 7 agents with 72 roadmaps
-- ✅ 4 slash commands
-- ✅ 7 invokable skills
-- ✅ Comprehensive documentation
-
-### v1.1.0 (Planned)
-- Interactive quizzes and assessments
-- Community project showcases
-- Real-time job market data
-- Peer learning matching
-
-### v2.0.0 (Planned)
-- AI-powered personalization
-- Advanced analytics
-- Integration with learning platforms
-- Mobile-optimized interface
-
-## 📈 Getting Started
-
-1. **[Install Plugin](#installation)**
-2. **Run `/learn`** to start
-3. **Choose your path** from 72 roles
-4. **Follow the roadmap** with projects
-5. **Take `/assess`** to validate skills
-6. **Build portfolio** with projects
-7. **Get hired!** 🎉
-
-## ❓ FAQ
-
-**Q: How long does it take to complete a roadmap?**
-A: 4-12 months depending on your starting level and time commitment (10-25 hours/week).
-
-**Q: Can I switch between different learning paths?**
-A: Yes! You can explore multiple paths. Many combinations are beneficial.
-
-**Q: Are the projects mandatory?**
-A: Yes, projects are crucial for practical learning. They build real portfolio pieces.
-
-**Q: Do I need to pay for resources?**
-A: Most resources are free (official docs, YouTube, blogs). Premium options available but optional.
-
-**Q: How do I track my progress?**
-A: Use `/assess` regularly to evaluate skills and track improvement over time.
-
-## 🎉 Success Stories
-
-> "This plugin helped me transition from frontend to full-stack in 6 months!"
-> - Sarah M., Berlin
-
-> "Following the DevOps roadmap, I landed my dream role at a tech startup."
-> - Ahmed K., London
-
-> "The assessment helped me identify my strengths and land a senior position."
-> - Maria G., Madrid
+✅ Professional enterprise-grade plugin
+✅ 3 specialized agents with deep expertise
+✅ Comprehensive learning paths (14-18 weeks)
+✅ 12+ hands-on projects with code
+✅ Complete deployment guidance
+✅ Real-world code examples
+✅ Best practices and patterns
+✅ Production-ready infrastructure
 
 ---
 
-**Start your learning journey today!**
-
+**Start your ASP.NET Core journey:**
 ```bash
 /learn
 ```
 
-Made with ❤️ for developers by developers.
-
-© 2025 Developer Roadmap Plugin Contributors
+Made with ❤️ for ASP.NET Core developers.
