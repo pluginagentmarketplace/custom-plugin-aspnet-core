@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "name": "Developer Roadmap Plugin",
+  "title": "🚀 Developer Roadmap - 72 Career Paths",
+  "version": "1.0.0",
+  "description": "Comprehensive learning plugin for all 72 developer career roadmaps from roadmap.sh. Features 7 specialized agents, interactive learning paths, skill assessments, and 500+ hands-on projects.",
+  "author": "Roadmap.sh Community & Claude Code Team",
+  "license": "MIT",
+  "repository": "https://github.com/pluginagentmarketplace/developer-roadmap-plugin",
+  "homepage": "https://roadmap.sh",
+  "keywords": [
+    "learning",
+    "career-paths",
+    "developer-roadmap",
+    "skill-assessment",
+    "interactive-learning",
+    "frontend",
+    "backend",
+    "fullstack",
+    "devops",
+    "ai-ml",
+    "leadership"
+  ],
+  "agents": [
+    {
+      "id": "frontend-ui-specialist",
+      "name": "Frontend & UI Specialist",
+      "description": "Expert in frontend, web UI frameworks, and user experience design",
+      "path": "agents/01-frontend-ui-developer.md"
+    },
+    {
+      "id": "backend-specialist",
+      "name": "Backend & Server-Side Specialist",
+      "description": "Expert in backend development, APIs, databases, and server architecture",
+      "path": "agents/02-backend-developer.md"
+    },
+    {
+      "id": "fullstack-architect",
+      "name": "Full Stack & Architect Specialist",
+      "description": "Expert in full-stack development and software architecture patterns",
+      "path": "agents/03-full-stack-architect.md"
+    },
+    {
+      "id": "devops-cloud-specialist",
+      "name": "DevOps & Cloud Engineer",
+      "description": "Expert in DevOps, cloud infrastructure, containerization, and CI/CD",
+      "path": "agents/04-devops-cloud-engineer.md"
+    },
+    {
+      "id": "data-ai-specialist",
+      "name": "Data & AI/ML Engineer",
+      "description": "Expert in data science, machine learning, AI agents, and analytics",
+      "path": "agents/05-data-ai-ml-engineer.md"
+    },
+    {
+      "id": "emerging-specialist",
+      "name": "Emerging & Specialized Domains",
+      "description": "Expert in blockchain, cybersecurity, game development, and mobile platforms",
+      "path": "agents/06-emerging-specialist.md"
+    },
+    {
+      "id": "leadership-quality-specialist",
+      "name": "Code Quality & Leadership Expert",
+      "description": "Expert in QA engineering, technical leadership, and code review practices",
+      "path": "agents/07-code-quality-leader.md"
+    }
+  ],
+  "commands": [
+    {
+      "name": "learn",
+      "description": "Choose a learning path and start interactive education",
+      "path": "commands/learn.md"
+    },
+    {
+      "name": "explore-roles",
+      "description": "Explore all 72 available roles and roadmaps",
+      "path": "commands/explore-roles.md"
+    },
+    {
+      "name": "assess",
+      "description": "Take a knowledge assessment and get personalized recommendations",
+      "path": "commands/assess.md"
+    },
+    {
+      "name": "roadmap",
+      "description": "View detailed roadmap for any role with learning resources",
+      "path": "commands/roadmap.md"
+    }
+  ],
+  "skills": [
+    {
+      "id": "frontend-skills",
+      "name": "Frontend & UI Development Skills",
+      "path": "skills/frontend/SKILL.md"
+    },
+    {
+      "id": "backend-skills",
+      "name": "Backend & API Development Skills",
+      "path": "skills/backend/SKILL.md"
+    },
+    {
+      "id": "fullstack-skills",
+      "name": "Full Stack & Architecture Skills",
+      "path": "skills/fullstack/SKILL.md"
+    },
+    {
+      "id": "devops-skills",
+      "name": "DevOps & Cloud Infrastructure Skills",
+      "path": "skills/devops/SKILL.md"
+    },
+    {
+      "id": "data-ai-skills",
+      "name": "Data & AI/ML Engineering Skills",
+      "path": "skills/data-ai/SKILL.md"
+    },
+    {
+      "id": "emerging-skills",
+      "name": "Emerging & Specialized Skills",
+      "path": "skills/emerging/SKILL.md"
+    },
+    {
+      "id": "leadership-skills",
+      "name": "Code Quality & Leadership Skills",
+      "path": "skills/leadership/SKILL.md"
+    }
+  ],
+  "hooks": {
+    "path": "hooks/hooks.json"
+  },
+  "requirements": {
+    "claude_code_version": ">=1.0.0"
+  },
+  "statistics": {
+    "total_roadmaps": 72,
+    "total_agents": 7,
+    "total_skills": 7,
+    "total_commands": 4,
+    "total_projects": 500,
+    "total_learning_hours": 2000,
+    "coverage": "Frontend, Backend, Full Stack, DevOps, Data Science, AI/ML, Mobile, Game Dev, Blockchain, Cybersecurity, Leadership"
+  }
+}

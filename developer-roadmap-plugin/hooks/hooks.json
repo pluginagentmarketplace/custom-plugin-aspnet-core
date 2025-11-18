@@ -1,0 +1,94 @@
+{
+  "hooks": [
+    {
+      "name": "learning-progress-tracker",
+      "description": "Track and record learning progress automatically",
+      "events": ["after-learn-command", "milestone-completion"],
+      "actions": [
+        "log_progress",
+        "update_stats",
+        "notify_milestone"
+      ]
+    },
+    {
+      "name": "skill-validation",
+      "description": "Validate claimed skills through assessments",
+      "events": ["after-assess-command"],
+      "actions": [
+        "validate_scores",
+        "update_profile",
+        "suggest_improvements"
+      ]
+    },
+    {
+      "name": "learning-reminder",
+      "description": "Send periodic learning reminders and suggestions",
+      "events": ["daily", "weekly"],
+      "actions": [
+        "check_engagement",
+        "send_reminder",
+        "suggest_next_project"
+      ]
+    },
+    {
+      "name": "project-completion",
+      "description": "Celebrate and validate completed projects",
+      "events": ["project-submitted"],
+      "actions": [
+        "validate_project",
+        "award_badge",
+        "suggest_next_level"
+      ]
+    },
+    {
+      "name": "community-contribution",
+      "description": "Track open source contributions",
+      "events": ["github-pr-merged", "project-github-link"],
+      "actions": [
+        "count_contributions",
+        "award_points",
+        "update_portfolio_score"
+      ]
+    },
+    {
+      "name": "role-readiness",
+      "description": "Check if user is job-ready for target role",
+      "events": ["after-milestone-4"],
+      "actions": [
+        "evaluate_readiness",
+        "provide_feedback",
+        "suggest_next_steps"
+      ]
+    }
+  ],
+  "notifications": {
+    "enabled": true,
+    "frequency": "daily",
+    "types": [
+      "milestone-achievement",
+      "skill-mastery",
+      "project-suggestion",
+      "peer-learning-opportunity"
+    ]
+  },
+  "gamification": {
+    "enabled": true,
+    "features": [
+      "points-system",
+      "badges",
+      "leaderboards",
+      "streaks",
+      "achievements"
+    ]
+  },
+  "analytics": {
+    "track": [
+      "learning-time",
+      "projects-completed",
+      "assessment-scores",
+      "skill-growth",
+      "community-engagement"
+    ],
+    "reporting": "weekly"
+  }
+}
