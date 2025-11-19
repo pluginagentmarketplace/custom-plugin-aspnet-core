@@ -1,0 +1,53 @@
+{
+  "hooks": [
+    {
+      "name": "project-initialization",
+      "description": "Initialize new ASP.NET Core project with best practices",
+      "events": ["on-project-create"],
+      "actions": [
+        "create-gitignore",
+        "setup-git",
+        "initialize-dependencies"
+      ]
+    },
+    {
+      "name": "code-quality-check",
+      "description": "Run code quality checks on commits",
+      "events": ["pre-commit"],
+      "actions": [
+        "run-linter",
+        "format-code",
+        "run-tests"
+      ]
+    },
+    {
+      "name": "deployment-validation",
+      "description": "Validate application before deployment",
+      "events": ["pre-deploy"],
+      "actions": [
+        "build-check",
+        "test-execution",
+        "security-scan",
+        "docker-build"
+      ]
+    }
+  ],
+  "notifications": {
+    "enabled": true,
+    "types": [
+      "deployment-complete",
+      "build-failed",
+      "tests-failed",
+      "security-warning"
+    ]
+  },
+  "automation": {
+    "enabled": true,
+    "features": [
+      "auto-format",
+      "auto-test",
+      "auto-build",
+      "auto-deploy"
+    ]
+  }
+}

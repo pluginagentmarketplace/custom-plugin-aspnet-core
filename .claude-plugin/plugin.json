@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "name": "custom-plugin-aspnet-core",
+  "title": "Custom Plugin ASP.NET Core",
+  "version": "1.0.0",
+  "description": "Professional ASP.NET Core development plugin with 3 agents, 3 skills, and complete learning infrastructure for enterprise applications.",
+  "author": "Custom Plugin Team",
+  "license": "MIT",
+  "keywords": [
+    "aspnet-core",
+    "csharp",
+    "dotnet",
+    "web-development",
+    "enterprise",
+    "microservices",
+    "api-development"
+  ],
+  "agents": [
+    {
+      "id": "aspnet-core-backend",
+      "name": "ASP.NET Core Backend Specialist",
+      "description": "Expert in ASP.NET Core backend development, APIs, and enterprise applications",
+      "path": "agents/aspnet-core-backend.md"
+    },
+    {
+      "id": "aspnet-core-devops",
+      "name": "ASP.NET Core DevOps & Infrastructure",
+      "description": "Expert in ASP.NET Core deployment, Docker, Azure, and CI/CD",
+      "path": "agents/aspnet-core-devops.md"
+    },
+    {
+      "id": "aspnet-core-architecture",
+      "name": "ASP.NET Core Architecture & Design",
+      "description": "Expert in system design, patterns, and enterprise architecture",
+      "path": "agents/aspnet-core-architecture.md"
+    }
+  ],
+  "commands": [
+    {
+      "name": "learn",
+      "description": "Start learning ASP.NET Core with personalized path",
+      "path": "commands/learn.md"
+    },
+    {
+      "name": "project",
+      "description": "Get hands-on project templates and guidance",
+      "path": "commands/project.md"
+    },
+    {
+      "name": "deploy",
+      "description": "Deploy ASP.NET Core application to production",
+      "path": "commands/deploy.md"
+    }
+  ],
+  "skills": [
+    {
+      "id": "aspnet-core-fundamentals",
+      "name": "ASP.NET Core Fundamentals",
+      "path": "skills/aspnet-core-fundamentals/SKILL.md"
+    },
+    {
+      "id": "aspnet-core-advanced",
+      "name": "ASP.NET Core Advanced Development",
+      "path": "skills/aspnet-core-advanced/SKILL.md"
+    },
+    {
+      "id": "aspnet-core-devops",
+      "name": "ASP.NET Core DevOps & Production",
+      "path": "skills/aspnet-core-devops/SKILL.md"
+    }
+  ],
+  "hooks": {
+    "path": "hooks/hooks.json"
+  },
+  "requirements": {
+    "claude_code_version": ">=1.0.0"
+  }
+}
