@@ -1,0 +1,108 @@
+# Entity Framework Core Configuration
+# SASMP v1.3.0 - Advanced ASP.NET Core patterns
+
+entity_framework:
+  version: "8.0"
+  provider: "Microsoft.EntityFrameworkCore.SqlServer"
+
+# DbContext configuration
+dbcontext:
+  name: "ApplicationDbContext"
+  connection_string_key: "DefaultConnection"
+  options:
+    enable_sensitive_data_logging: false
+    enable_detailed_errors: true
+    query_tracking_behavior: "TrackAll"  # TrackAll, NoTracking, NoTrackingWithIdentityResolution
+
+# Migration settings
+migrations:
+  folder: "Data/Migrations"
+  history_table: "__EFMigrationsHistory"
+  schema: null
+
+# Query configuration
+query_defaults:
+  split_query_behavior: "SingleQuery"  # SingleQuery, SplitQuery
+  max_batch_size: 100
+  command_timeout: 30
+
+# Fluent API patterns
+entity_configurations:
+  base_entity:
+    - Id (int, primary key)
+    - CreatedAt (datetime, default: GETUTCDATE())
+    - UpdatedAt (datetime, nullable)
+    - IsDeleted (bool, default: false)
+
+  relationships:
+    one_to_many:
+      cascade_delete: true
+      restrict_delete: false
+    many_to_many:
+      use_skip_navigation: true
+
+# Authentication configuration
+authentication:
+  jwt:
+    issuer: "https://api.example.com"
+    audience: "https://api.example.com"
+    expiration_minutes: 60
+    refresh_token_days: 7
+    secret_key_length: 256
+
+  identity:
+    password:
+      required_length: 8
+      require_digit: true
+      require_lowercase: true
+      require_uppercase: true
+      require_non_alphanumeric: true
+    lockout:
+      max_failed_attempts: 5
+      lockout_timespan_minutes: 15
+    user:
+      require_unique_email: true
+      allowed_username_characters: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+"
+
+# Testing configuration
+testing:
+  in_memory_database: true
+  test_database_name: "TestDb"
+  seed_test_data: true
+  use_transactions: true
+
+# Caching
+caching:
+  memory_cache:
+    size_limit: 1024
+    compaction_percentage: 0.05
+  distributed_cache:
+    provider: "Redis"  # Redis, SqlServer, Memory
+    expiration_minutes: 60
+
+# Performance
+performance:
+  compiled_queries: true
+  split_queries: false
+  no_tracking_queries: true
+  eager_loading_default: false
+  projection_default: true
+
+# Logging
+logging:
+  log_sql_queries: true
+  log_sensitive_data: false
+  log_level: "Information"
+
+# Advanced patterns
+patterns:
+  repository:
+    enabled: true
+    generic: true
+    specification_pattern: true
+  unit_of_work:
+    enabled: true
+    auto_save: false
+  cqrs:
+    enabled: false
+    mediator: "MediatR"

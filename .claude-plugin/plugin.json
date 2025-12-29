@@ -20,57 +20,57 @@
       "id": "aspnet-core-backend",
       "name": "ASP.NET Core Backend Specialist",
       "description": "Expert in ASP.NET Core backend development, APIs, and enterprise applications",
-      "path": "agents/aspnet-core-backend.md"
+      "path": "./agents/aspnet-core-backend.md"
     },
     {
       "id": "aspnet-core-devops",
       "name": "ASP.NET Core DevOps & Infrastructure",
       "description": "Expert in ASP.NET Core deployment, Docker, Azure, and CI/CD",
-      "path": "agents/aspnet-core-devops.md"
+      "path": "./agents/aspnet-core-devops.md"
     },
     {
       "id": "aspnet-core-architecture",
       "name": "ASP.NET Core Architecture & Design",
       "description": "Expert in system design, patterns, and enterprise architecture",
-      "path": "agents/aspnet-core-architecture.md"
+      "path": "./agents/aspnet-core-architecture.md"
     }
   ],
   "commands": [
     {
       "name": "learn",
       "description": "Start learning ASP.NET Core with personalized path",
-      "path": "commands/learn.md"
+      "path": "./commands/learn.md"
     },
     {
       "name": "project",
       "description": "Get hands-on project templates and guidance",
-      "path": "commands/project.md"
+      "path": "./commands/project.md"
     },
     {
       "name": "deploy",
       "description": "Deploy ASP.NET Core application to production",
-      "path": "commands/deploy.md"
+      "path": "./commands/deploy.md"
     }
   ],
   "skills": [
     {
       "id": "aspnet-core-fundamentals",
       "name": "ASP.NET Core Fundamentals",
-      "path": "skills/aspnet-core-fundamentals/SKILL.md"
+      "path": "./skills/aspnet-core-fundamentals/SKILL.md"
     },
     {
       "id": "aspnet-core-advanced",
       "name": "ASP.NET Core Advanced Development",
-      "path": "skills/aspnet-core-advanced/SKILL.md"
+      "path": "./skills/aspnet-core-advanced/SKILL.md"
     },
     {
       "id": "aspnet-core-devops",
       "name": "ASP.NET Core DevOps & Production",
-      "path": "skills/aspnet-core-devops/SKILL.md"
+      "path": "./skills/aspnet-core-devops/SKILL.md"
     }
   ],
   "hooks": {
-    "path": "hooks/hooks.json"
+    "path": "./hooks/hooks.json"
   },
   "requirements": {
     "claude_code_version": ">=1.0.0"

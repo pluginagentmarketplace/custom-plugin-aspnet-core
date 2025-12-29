@@ -1,0 +1,83 @@
+# ASP.NET Core Fundamentals Configuration
+# SASMP v1.3.0 - Configuration template for ASP.NET Core applications
+
+aspnetcore_project:
+  framework: "net8.0"
+  sdk_version: "8.0.100"
+  nullable: enable
+  implicit_usings: enable
+
+# Project structure
+project_structure:
+  src:
+    - Controllers/
+    - Models/
+    - Services/
+    - Data/
+    - DTOs/
+  tests:
+    - UnitTests/
+    - IntegrationTests/
+
+# appsettings.json template
+app_settings:
+  logging:
+    log_level:
+      default: "Information"
+      microsoft_aspnetcore: "Warning"
+  allowed_hosts: "*"
+  connection_strings:
+    default_connection: "Server=localhost;Database=MyApp;Trusted_Connection=True;"
+
+# Middleware pipeline order
+middleware_pipeline:
+  - UseExceptionHandler
+  - UseHttpsRedirection
+  - UseStaticFiles
+  - UseRouting
+  - UseCors
+  - UseAuthentication
+  - UseAuthorization
+  - UseEndpoints
+
+# Dependency injection patterns
+dependency_injection:
+  lifetimes:
+    singleton:
+      - IConfiguration
+      - ILogger<T>
+    scoped:
+      - DbContext
+      - IRepository<T>
+      - IUnitOfWork
+    transient:
+      - IValidator<T>
+      - IMapper
+
+# Routing configuration
+routing:
+  attribute_routing: true
+  conventional_routing: false
+  route_prefix: "api"
+  versioning:
+    enabled: true
+    default_version: "1.0"
+
+# Model validation
+validation:
+  data_annotations: true
+  fluent_validation: false
+  custom_validators: []
+
+# Error handling
+error_handling:
+  use_problem_details: true
+  include_exception_details: false
+  log_errors: true
+
+# Swagger/OpenAPI
+swagger:
+  enabled: true
+  version: "v1"
+  title: "My API"
+  description: "API documentation"

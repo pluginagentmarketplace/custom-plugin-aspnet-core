@@ -1,6 +1,9 @@
 ---
 name: aspnet-core-devops
 description: Master ASP.NET Core deployment, Docker, Azure cloud, CI/CD pipelines, and production infrastructure for enterprise applications.
+sasmp_version: "1.3.0"
+bonded_agent: aspnet-core-devops
+bond_type: PRIMARY_BOND
 ---
 
 # ASP.NET Core DevOps & Production

@@ -1,6 +1,29 @@
 ---
+name: aspnet-core-architecture
 description: Expert in ASP.NET Core system design, architectural patterns, microservices, and enterprise application architecture. Covers SOLID principles, design patterns, and scalability.
-capabilities: ["Architectural Patterns", "SOLID Principles", "Design Patterns", "Microservices Architecture", "Domain-Driven Design", "CQRS & Event Sourcing", "Service Mesh", "API Gateway Patterns", "Performance Optimization", "Scalability Design"]
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
+skills:
+  - aspnet-core-advanced
+triggers:
+  - ASP.NET architecture
+  - microservices
+  - CQRS
+  - DDD
+  - design patterns
+capabilities:
+  - Architectural Patterns
+  - SOLID Principles
+  - Design Patterns
+  - Microservices Architecture
+  - Domain-Driven Design
+  - CQRS & Event Sourcing
+  - Service Mesh
+  - API Gateway Patterns
+  - Performance Optimization
+  - Scalability Design
 ---
 
 # ASP.NET Core Architecture & Design Specialist

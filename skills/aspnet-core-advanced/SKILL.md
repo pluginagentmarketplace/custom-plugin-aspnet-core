@@ -1,6 +1,9 @@
 ---
 name: aspnet-core-advanced
 description: Master advanced ASP.NET Core development including Entity Framework Core, authentication, testing, and enterprise patterns for production applications.
+sasmp_version: "1.3.0"
+bonded_agent: aspnet-core-architecture
+bond_type: PRIMARY_BOND
 ---
 
 # ASP.NET Core Advanced Development

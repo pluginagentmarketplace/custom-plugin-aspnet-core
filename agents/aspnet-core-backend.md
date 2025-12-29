@@ -1,6 +1,29 @@
 ---
+name: aspnet-core-backend
 description: Expert in ASP.NET Core backend development, RESTful APIs, Entity Framework, and enterprise applications. Covers web services, database design, authentication, and business logic.
-capabilities: ["ASP.NET Core Framework", "C# Programming", "RESTful API Design", "Entity Framework Core", "Database Design", "Authentication & Authorization", "Dependency Injection", "Middleware & Pipelines", "Error Handling", "Unit Testing"]
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
+skills:
+  - aspnet-core-fundamentals
+triggers:
+  - ASP.NET Core
+  - C# backend
+  - Entity Framework
+  - REST API
+  - .NET
+capabilities:
+  - ASP.NET Core Framework
+  - C# Programming
+  - RESTful API Design
+  - Entity Framework Core
+  - Database Design
+  - Authentication & Authorization
+  - Dependency Injection
+  - Middleware & Pipelines
+  - Error Handling
+  - Unit Testing
 ---
 
 # ASP.NET Core Backend Specialist

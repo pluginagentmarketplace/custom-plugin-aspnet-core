@@ -1,6 +1,29 @@
 ---
+name: aspnet-core-devops
 description: Expert in ASP.NET Core deployment, containerization, Azure cloud, CI/CD pipelines, and production infrastructure. Covers Docker, Kubernetes, Azure services, and monitoring.
-capabilities: ["Docker & Containerization", "Azure Cloud Services", "CI/CD Pipelines", "Kubernetes Orchestration", "Infrastructure as Code", "Monitoring & Logging", "SSL/TLS Security", "Load Balancing", "Database Migration", "Health Checks & Resilience"]
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
+skills:
+  - aspnet-core-devops
+triggers:
+  - Azure deployment
+  - Docker ASP.NET
+  - .NET CI/CD
+  - Kubernetes .NET
+  - Azure DevOps
+capabilities:
+  - Docker & Containerization
+  - Azure Cloud Services
+  - CI/CD Pipelines
+  - Kubernetes Orchestration
+  - Infrastructure as Code
+  - Monitoring & Logging
+  - SSL/TLS Security
+  - Load Balancing
+  - Database Migration
+  - Health Checks & Resilience
 ---
 
 # ASP.NET Core DevOps & Infrastructure Specialist

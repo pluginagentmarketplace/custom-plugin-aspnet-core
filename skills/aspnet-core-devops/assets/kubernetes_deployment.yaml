@@ -1,0 +1,249 @@
+# ASP.NET Core Kubernetes Deployment Configuration
+# SASMP v1.3.0 - Production-ready Kubernetes manifests
+
+---
+# Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: aspnetcore-app
+  labels:
+    app: aspnetcore
+    environment: production
+
+---
+# ConfigMap
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aspnetcore-config
+  namespace: aspnetcore-app
+data:
+  ASPNETCORE_ENVIRONMENT: "Production"
+  ASPNETCORE_URLS: "http://+:80"
+  Logging__LogLevel__Default: "Information"
+  Logging__LogLevel__Microsoft: "Warning"
+
+---
+# Secret (base64 encoded values)
+apiVersion: v1
+kind: Secret
+metadata:
+  name: aspnetcore-secrets
+  namespace: aspnetcore-app
+type: Opaque
+data:
+  ConnectionStrings__DefaultConnection: <base64-encoded-connection-string>
+  Jwt__SecretKey: <base64-encoded-jwt-secret>
+
+---
+# Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aspnetcore-api
+  namespace: aspnetcore-app
+  labels:
+    app: aspnetcore-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: aspnetcore-api
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: aspnetcore-api
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "80"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+      - name: aspnetcore-api
+        image: myregistry.azurecr.io/aspnetcore-api:1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+          name: http
+        envFrom:
+        - configMapRef:
+            name: aspnetcore-config
+        - secretRef:
+            name: aspnetcore-secrets
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health/live
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health/ready
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          timeoutSeconds: 3
+          failureThreshold: 3
+        startupProbe:
+          httpGet:
+            path: /health/startup
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          failureThreshold: 30
+      imagePullSecrets:
+      - name: acr-secret
+
+---
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: aspnetcore-api-service
+  namespace: aspnetcore-app
+  labels:
+    app: aspnetcore-api
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    app: aspnetcore-api
+
+---
+# Horizontal Pod Autoscaler
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: aspnetcore-api-hpa
+  namespace: aspnetcore-app
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: aspnetcore-api
+  minReplicas: 3
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 300
+      policies:
+      - type: Percent
+        value: 10
+        periodSeconds: 60
+    scaleUp:
+      stabilizationWindowSeconds: 0
+      policies:
+      - type: Percent
+        value: 100
+        periodSeconds: 15
+      - type: Pods
+        value: 4
+        periodSeconds: 15
+      selectPolicy: Max
+
+---
+# Ingress
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: aspnetcore-api-ingress
+  namespace: aspnetcore-app
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+    nginx.ingress.kubernetes.io/rate-limit: "100"
+    nginx.ingress.kubernetes.io/rate-limit-window: "1m"
+spec:
+  tls:
+  - hosts:
+    - api.example.com
+    secretName: api-tls-secret
+  rules:
+  - host: api.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: aspnetcore-api-service
+            port:
+              number: 80
+
+---
+# Pod Disruption Budget
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: aspnetcore-api-pdb
+  namespace: aspnetcore-app
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: aspnetcore-api
+
+---
+# Network Policy
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: aspnetcore-api-netpol
+  namespace: aspnetcore-app
+spec:
+  podSelector:
+    matchLabels:
+      app: aspnetcore-api
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: ingress-nginx
+    ports:
+    - protocol: TCP
+      port: 80
+  egress:
+  - to:
+    - namespaceSelector: {}
+    ports:
+    - protocol: TCP
+      port: 443
+    - protocol: TCP
+      port: 1433  # SQL Server

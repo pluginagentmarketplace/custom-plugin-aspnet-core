@@ -1,6 +1,9 @@
 ---
 name: aspnet-core-fundamentals
 description: Master ASP.NET Core fundamentals including C#, project structure, routing, middleware, and basic API development. Essential skills for all ASP.NET Core developers.
+sasmp_version: "1.3.0"
+bonded_agent: aspnet-core-backend
+bond_type: PRIMARY_BOND
 ---
 
 # ASP.NET Core Fundamentals
