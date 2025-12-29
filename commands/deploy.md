@@ -1,3 +1,9 @@
+---
+name: deploy
+description: ASP.NET Core Deployment Guide
+allowed-tools: Read
+---
+
 # /deploy - ASP.NET Core Deployment Guide
 
 **Deploy your ASP.NET Core application to production.**

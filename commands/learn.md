@@ -1,3 +1,9 @@
+---
+name: learn
+description: ASP.NET Core Learning Path
+allowed-tools: Read
+---
+
 # /learn - ASP.NET Core Learning Path
 
 **Start your ASP.NET Core learning journey with a personalized path.**

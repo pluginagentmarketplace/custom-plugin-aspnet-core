@@ -1,3 +1,9 @@
+---
+name: project
+description: ASP.NET Core Project Templates
+allowed-tools: Read
+---
+
 # /project - ASP.NET Core Project Templates
 
 **Get hands-on project templates and implementation guidance.**
