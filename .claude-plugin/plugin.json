@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "name": "custom-plugin-aspnet-core",
   "title": "Custom Plugin ASP.NET Core",
-  "version": "1.0.0",
-  "description": "Professional ASP.NET Core development plugin with 3 agents, 3 skills, and complete learning infrastructure for enterprise applications.",
+  "version": "2.0.0",
+  "description": "Production-grade ASP.NET Core development plugin with 3 agents, 3 skills, and complete learning infrastructure for enterprise applications. Implements 2024-2025 best practices including Clean Architecture, CQRS, GitOps, and comprehensive observability.",
   "author": "Custom Plugin Team",
   "license": "SEE LICENSE IN LICENSE",
   "keywords": [
@@ -13,66 +13,187 @@
     "web-development",
     "enterprise",
     "microservices",
-    "api-development"
+    "api-development",
+    "clean-architecture",
+    "cqrs",
+    "docker",
+    "kubernetes",
+    "azure",
+    "devops"
   ],
   "agents": [
     {
       "id": "aspnet-core-backend",
       "name": "ASP.NET Core Backend Specialist",
-      "description": "Expert in ASP.NET Core backend development, APIs, and enterprise applications",
-      "path": "./agents/aspnet-core-backend.md"
+      "version": "2.0.0",
+      "description": "Expert in ASP.NET Core backend development, APIs, and enterprise applications with production-grade patterns",
+      "path": "./agents/aspnet-core-backend.md",
+      "capabilities": [
+        "ASP.NET Core Framework",
+        "C# Programming",
+        "RESTful API Design",
+        "Entity Framework Core",
+        "Authentication & Authorization",
+        "Performance Optimization"
+      ],
+      "io_schema": {
+        "input": ["query", "context"],
+        "output": ["response", "code_blocks", "references"]
+      }
     },
     {
       "id": "aspnet-core-devops",
       "name": "ASP.NET Core DevOps & Infrastructure",
-      "description": "Expert in ASP.NET Core deployment, Docker, Azure, and CI/CD",
-      "path": "./agents/aspnet-core-devops.md"
+      "version": "2.0.0",
+      "description": "Expert in ASP.NET Core deployment, Docker, Azure, CI/CD, and Kubernetes with GitOps practices",
+      "path": "./agents/aspnet-core-devops.md",
+      "capabilities": [
+        "Docker & Containerization",
+        "Azure Cloud Services",
+        "CI/CD Pipelines",
+        "Kubernetes Orchestration",
+        "Infrastructure as Code",
+        "Monitoring & Observability"
+      ],
+      "io_schema": {
+        "input": ["query", "context"],
+        "output": ["response", "manifests", "commands", "warnings"]
+      }
     },
     {
       "id": "aspnet-core-architecture",
       "name": "ASP.NET Core Architecture & Design",
-      "description": "Expert in system design, patterns, and enterprise architecture",
-      "path": "./agents/aspnet-core-architecture.md"
+      "version": "2.0.0",
+      "description": "Expert in system design, patterns, and enterprise architecture with DDD and CQRS",
+      "path": "./agents/aspnet-core-architecture.md",
+      "capabilities": [
+        "Architectural Patterns",
+        "SOLID Principles",
+        "Design Patterns",
+        "Domain-Driven Design",
+        "CQRS & Event Sourcing",
+        "Microservices Architecture"
+      ],
+      "io_schema": {
+        "input": ["query", "context"],
+        "output": ["response", "diagrams", "trade_offs", "recommendations"]
+      }
     }
   ],
   "commands": [
     {
       "name": "learn",
       "description": "Start learning ASP.NET Core with personalized path",
-      "path": "./commands/learn.md"
+      "path": "./commands/learn.md",
+      "usage": "/learn [track]",
+      "exit_codes": {
+        "0": "Success",
+        "1": "Invalid track specified"
+      }
     },
     {
       "name": "project",
       "description": "Get hands-on project templates and guidance",
-      "path": "./commands/project.md"
+      "path": "./commands/project.md",
+      "usage": "/project [level]",
+      "exit_codes": {
+        "0": "Success",
+        "1": "Invalid level specified"
+      }
     },
     {
       "name": "deploy",
       "description": "Deploy ASP.NET Core application to production",
-      "path": "./commands/deploy.md"
+      "path": "./commands/deploy.md",
+      "usage": "/deploy [target]",
+      "exit_codes": {
+        "0": "Success",
+        "1": "Deployment failed",
+        "2": "Configuration error"
+      }
     }
   ],
   "skills": [
     {
       "id": "aspnet-core-fundamentals",
       "name": "ASP.NET Core Fundamentals",
-      "path": "./skills/aspnet-core-fundamentals/SKILL.md"
+      "version": "2.0.0",
+      "path": "./skills/aspnet-core-fundamentals/SKILL.md",
+      "bonded_agent": "aspnet-core-backend",
+      "features": {
+        "parameter_validation": true,
+        "retry_logic": true,
+        "observability": true,
+        "test_templates": true
+      }
     },
     {
       "id": "aspnet-core-advanced",
       "name": "ASP.NET Core Advanced Development",
-      "path": "./skills/aspnet-core-advanced/SKILL.md"
+      "version": "2.0.0",
+      "path": "./skills/aspnet-core-advanced/SKILL.md",
+      "bonded_agent": "aspnet-core-architecture",
+      "features": {
+        "parameter_validation": true,
+        "retry_logic": true,
+        "observability": true,
+        "test_templates": true
+      }
     },
     {
       "id": "aspnet-core-devops",
       "name": "ASP.NET Core DevOps & Production",
-      "path": "./skills/aspnet-core-devops/SKILL.md"
+      "version": "2.0.0",
+      "path": "./skills/aspnet-core-devops/SKILL.md",
+      "bonded_agent": "aspnet-core-devops",
+      "features": {
+        "parameter_validation": true,
+        "retry_logic": true,
+        "observability": true,
+        "test_templates": true
+      }
     }
   ],
   "hooks": {
     "path": "./hooks/hooks.json"
   },
   "requirements": {
-    "claude_code_version": ">=1.0.0"
+    "claude_code_version": ">=1.0.0",
+    "sasmp_version": "1.3.0"
+  },
+  "integrity": {
+    "agent_skill_bonds": [
+      {"agent": "aspnet-core-backend", "skill": "aspnet-core-fundamentals"},
+      {"agent": "aspnet-core-architecture", "skill": "aspnet-core-advanced"},
+      {"agent": "aspnet-core-devops", "skill": "aspnet-core-devops"}
+    ],
+    "orphan_skills": [],
+    "ghost_triggers": [],
+    "circular_dependencies": []
+  },
+  "quality_standards": {
+    "ethical": "No dark patterns, transparent behavior",
+    "honest": "Accurate capability claims",
+    "modern": "2024-2025 industry standards",
+    "maintainable": "Self-documenting code"
+  },
+  "changelog": {
+    "2.0.0": {
+      "date": "2025-12-30",
+      "changes": [
+        "Added I/O schemas to all agents",
+        "Implemented error handling with retry policies",
+        "Added comprehensive troubleshooting guides",
+        "Implemented parameter validation for all skills",
+        "Added observability hooks (logging, metrics, tracing)",
+        "Included unit test templates",
+        "Updated to ASP.NET Core 8/9 best practices",
+        "Added integrity checks"
+      ]
+    },
+    "1.0.0": {
+      "date": "2025-01-01",
+      "changes": ["Initial release with SASMP v1.3.0 compliance"]
+    }
   }
 }
