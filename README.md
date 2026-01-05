@@ -63,7 +63,7 @@
 
 ```bash
 # Step 1️⃣ Add the marketplace
-/plugin add marketplace pluginagentmarketplace/custom-plugin-aspnet-core
+/plugin marketplace add pluginagentmarketplace/custom-plugin-aspnet-core
 
 # Step 2️⃣ Install the plugin
 /plugin install custom-plugin-aspnet-core@pluginagentmarketplace-aspnet-core
